@@ -1,0 +1,845 @@
+body {
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
+    background: #f5f5f5;
+    justify-content: center;
+    /* căn giữa ngang */
+    align-items: center;
+    /* căn giữa dọc */
+
+}
+
+.header {
+    background: #ffffff;
+    padding: 15px 30px;
+    border-bottom: 1px solid #ddd;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.header .logo {
+    font-size: 28px;
+    font-weight: 700;
+    color: #ff5e00;
+}
+
+.header .nav {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+}
+
+.header .nav a {
+    text-decoration: none;
+    color: #333;
+    font-weight: 500;
+    font-size: 16px;
+    transition: color 0.3s;
+}
+
+.header .nav a:hover {
+    color: #ff5e00;
+}
+
+.header .nav .login {
+    padding: 5px 10px;
+    background: #ff5e00;
+    color: white;
+    border-radius: 5px;
+    transition: background 0.3s;
+}
+
+.header .nav .login:hover {
+    background: #e65c00;
+    color: white;
+}
+
+.header .nav .logout {
+    padding: 5px 10px;
+    background: #ff5e00;
+    color: white;
+    border-radius: 5px;
+    transition: background 0.3s;
+}
+
+.header .nav .logout:hover {
+    background: #e65c00;
+    color: white;
+}
+
+
+.carousel {
+    position: relative;
+    width: 100%;
+    height: 450px;
+    overflow: hidden;
+    margin-bottom: 20px;
+}
+
+.carousel .slides {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+}
+
+.carousel .slide {
+    min-width: 100%;
+    height: 450px;
+    background-size: contain;
+    /* Thay cover bằng contain để giữ nguyên tỷ lệ */
+    background-position: center;
+    background-repeat: no-repeat;
+    /* Ngăn lặp ảnh */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 36px;
+    font-weight: 700;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.carousel .slide img {
+    width: 100%;
+    height: 100%;
+}
+
+@media (max-width: 600px) {
+    .carousel {
+        height: 200px;
+    }
+    .carousel .slide img {
+        height: 200px;
+    }
+}
+
+.carousel .prev,
+.carousel .next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    padding: 15px;
+    cursor: pointer;
+    font-size: 20px;
+    transition: background 0.3s;
+}
+
+.carousel .prev:hover,
+.carousel .next:hover {
+    background: rgba(0, 0, 0, 0.7);
+}
+
+.carousel .prev {
+    left: 20px;
+}
+
+.carousel .next {
+    right: 20px;
+}
+
+.search-bar {
+    background: #ffffff;
+    padding: 20px;
+    margin: 0 30px;
+    border-radius: 10px;
+    display: flex;
+    gap: 15px;
+    align-items: center;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    position: relative;
+    top: -50px;
+    z-index: 1;
+}
+
+.search-bar select,
+.search-bar input[type="text"] {
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 16px;
+    width: 180px;
+    transition: border 0.3s;
+}
+
+.search-bar select:focus,
+.search-bar input[type="text"]:focus {
+    border: 1px solid #ff5e00;
+    outline: none;
+}
+
+.search-bar input[type="text"] {
+    width: 350px;
+}
+
+.search-bar button {
+    padding: 12px 25px;
+    background: #ff5e00;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: 500;
+    font-size: 16px;
+    transition: background 0.3s;
+}
+
+.search-bar button:hover {
+    background: #e65c00;
+}
+
+.room-actions {
+    margin-top: 10px;
+    margin-left: 20px;
+}
+
+.btn-rent,
+.btn-detail {
+    display: inline-block;
+    padding: 8px 15px;
+    text-decoration: none;
+    color: white;
+    border-radius: 5px;
+    font-size: 14px;
+    /* Tăng kích thước chữ */
+}
+
+.btn-rent {
+    background-color: #4CAF50;
+}
+
+.btn-detail {
+    background-color: #2196F3;
+}
+
+.btn-rent:hover,
+.btn-detail:hover {
+    opacity: 0.8;
+}
+
+.hot-room-info .rating {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+.hot-room-info .status {
+    margin-left: auto;
+    /* Đẩy phần status sang bên phải */
+    padding-left: 10px;
+    /* Tạo khoảng cách nếu cần */
+}
+
+.hot-room-info .rating,
+.hot-room-info .status {
+    display: inline-flex;
+    /* Đảm bảo cả hai nằm cùng dòng */
+    vertical-align: middle;
+}
+
+.content {
+    padding: 30px;
+}
+
+.content h2 {
+    font-size: 24px;
+    font-weight: 700;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+.rooms {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    /* Giảm từ 280px xuống 220px */
+    gap: 20px;
+}
+
+.room-card {
+    background: #ffffff;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    overflow: hidden;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.room-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
+}
+
+.room-card img {
+    width: 100%;
+    height: 140px;
+    object-fit: cover;
+}
+
+.room-card .details {
+    padding: 10px;
+}
+
+.room-card .details h3 {
+    margin: 0 0 10px;
+    font-size: 18px;
+    color: #333;
+    font-weight: 500;
+}
+
+.room-card .details p {
+    margin: 5px 0;
+    color: #666;
+    font-size: 14px;
+}
+
+.room-card .details .price {
+    color: #ff5e00;
+    font-weight: 700;
+    font-size: 18px;
+}
+
+.room-card .details button {
+    margin-top: 10px;
+    padding: 10px 20px;
+    background: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: 500;
+    transition: background 0.3s;
+}
+
+.room-card .details button:hover {
+    background: #45a049;
+}
+
+.room-card .details button:disabled {
+    background: #cccccc;
+    cursor: not-allowed;
+}
+
+.city-highlights {
+    margin-bottom: 40px;
+}
+
+.city-highlights h2 {
+    font-size: 24px;
+    font-weight: 700;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+.city-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.city-card {
+    background: #ffffff;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    padding: 20px;
+    width: 300px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.city-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
+}
+
+.city-card h3 {
+    font-size: 20px;
+    color: #ff5e00;
+    font-weight: 700;
+    margin-bottom: 15px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.city-card h3::before {
+    content: "📍";
+    font-size: 24px;
+}
+
+.city-card ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.city-card ul li {
+    margin-bottom: 10px;
+}
+
+.city-card ul li a {
+    text-decoration: none;
+    color: #333;
+    font-size: 16px;
+    transition: color 0.3s;
+}
+
+.city-card ul li a:hover {
+    color: #ff5e00;
+}
+
+/* Footer */
+.footer {
+    /* background-image: linear-gradient(0, #1ca6e0, hsl(267, 49%, 52%));  */
+
+    color: black;
+    padding: 20px 0;
+    margin-top: 40px;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-around;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+
+.footer-section h3 {
+    margin-bottom: 15px;
+}
+
+.footer-section p {
+    margin-bottom: 10px;
+}
+
+.footer-section a {
+    color: black;
+    text-decoration: none;
+}
+
+.footer-section a:hover {
+    text-decoration: underline;
+}
+
+.footer-bottom {
+    text-align: center;
+    padding-top: 20px;
+    border-top: 1px solid #333;
+}
+
+
+
+/*chuc nang dang nhap*/
+.chua {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+.login-container {
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 400px;
+}
+
+.login-container h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+    color: #555;
+}
+
+.form-group input {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 14px;
+}
+
+.login-btn {
+    width: 90%;
+    padding: 10px;
+    background-color: #ff5e00;
+    border: none;
+    border-radius: 4px;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.login-btn:hover {
+    background-color: #ff5e00;
+}
+
+.error {
+    color: red;
+    text-align: center;
+    margin-top: 10px;
+}
+
+.register-link {
+    text-align: center;
+    margin-top: 15px;
+}
+
+.register-link a {
+    color: #ff5e00;
+    text-decoration: none;
+}
+
+.register-link a:hover {
+    text-decoration: underline;
+}
+
+.back-button1 {
+    width: 90%;
+    padding: 10px;
+    background-color: #ff5e00;
+    border: none;
+    border-radius: 4px;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.back-button1:hover {
+    background-color: #ff5e00;
+}
+
+/*quen mat khau */
+.register-link,
+.forgot-password,
+.back-to-login {
+    text-align: center;
+    margin-top: 15px;
+}
+
+.register-link a,
+.forgot-password a,
+.back-to-login a {
+    color: #007bff;
+    text-decoration: none;
+}
+
+.register-link a:hover,
+.forgot-password a:hover,
+.back-to-login a:hover {
+    text-decoration: underline;
+}
+
+
+/*phong hot*/
+.hot-rooms {
+    margin: 20px 0;
+    padding: 20px;
+    background-color: #f5f5f5;
+    border-radius: 8px;
+}
+
+.hot-rooms h2 {
+    font-size: 24px;
+    margin-bottom: 15px;
+    color: #333;
+}
+
+.hot-room-card {
+    justify-items: center;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    margin-bottom: 15px;
+    overflow: hidden;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    min-height: 200px;
+    /* Tăng chiều cao tối thiểu */
+    flex: 0 0 calc(25% - 15px);
+}
+
+.hot-room-card:last-child {
+    margin-right: 0px;
+}
+
+.hot-room-card img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+}
+
+.hot-room-info {
+    padding: 10px 15px;
+    /* Tăng padding để nội dung không bị chật */
+    flex-grow: 1;
+    height: auto;
+    /* Loại bỏ height cố định */
+}
+
+.rating {
+    color: #ffd700;
+    font-size: 10px;
+}
+
+.rating span {
+    background-color: #ff4444;
+    color: #fff;
+    padding: 1px 5px;
+    border-radius: 3px;
+    margin-left: 3px;
+    font-size: 10px;
+}
+
+.room-details {
+    margin: 5px 0;
+    line-height: 1.5;
+    /* Tăng khoảng cách giữa các dòng */
+}
+
+.room-details .label {
+    color: #00cc00;
+    font-weight: bold;
+    margin-right: 5px;
+    font-size: 12px;
+    display: block;
+}
+
+.room-details .price,
+.room-details .area,
+.room-details .address {
+    display: block;
+    font-size: 14px;
+    /* Tăng kích thước chữ */
+    margin-bottom: 5px;
+    /* Thêm khoảng cách giữa các phần tử */
+}
+
+.room-details .price {
+    color: #00cc00;
+    font-weight: bold;
+}
+
+.room-details .area {
+    color: #00cc00;
+    font-weight: bold;
+}
+
+.room-details .address {
+    color: #666;
+    font-size: 12px;
+    /* Tăng nhẹ kích thước chữ */
+}
+
+.room-actions {
+    margin-top: 10px;
+    display: flex;
+    gap: 10px;
+    /* Thêm khoảng cách giữa các nút */
+}
+
+.room-details,
+.room-actions {
+    display: block !important;
+    /* Đảm bảo hiển thị */
+}
+
+.room-details span {
+    display: block;
+    /* Đảm bảo các span trong .room-details hiển thị */
+}
+
+.posted-time {
+    color: #999;
+    font-size: 10px;
+    display: block;
+    /* Thời gian trên dòng riêng */
+}
+
+/*Thông tin về chúng tôi*/
+.about-us {
+    background: #ffffff;
+    padding: 50px 30px;
+    margin: 50px auto;
+    border-radius: 12px;
+    max-width: 1000px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.05);
+    color: #333;
+    line-height: 1.7;
+}
+
+.about-us h2 {
+    font-size: 32px;
+    color: #ff5e00;
+    margin-bottom: 25px;
+    text-align: center;
+    font-weight: bold;
+}
+
+.about-us .intro {
+    font-size: 17px;
+    margin-bottom: 35px;
+    text-align: justify;
+}
+
+.about-us h3 {
+    font-size: 24px;
+    color: #333;
+    margin-top: 30px;
+    margin-bottom: 15px;
+}
+
+.about-us ul {
+    list-style: none;
+    padding-left: 0;
+}
+
+.about-us ul li {
+    font-size: 16px;
+    margin-bottom: 15px;
+    padding-left: 28px;
+    position: relative;
+    text-align: justify;
+}
+
+.about-us ul li::before {
+    content: "✔";
+    position: absolute;
+    left: 0;
+    color: #4CAF50;
+    font-weight: bold;
+    font-size: 16px;
+}
+
+.about-us .mission p {
+    font-size: 16px;
+    text-align: justify;
+    margin-top: 10px;
+    color: #555;
+}
+
+/* hoa don */
+.personal-info {
+    margin: 20px 0;
+    padding: 20px;
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.tabs {
+    display: flex;
+    border-bottom: 2px solid #ddd;
+    margin-bottom: 20px;
+}
+
+.tab-button {
+    padding: 10px 20px;
+    border: none;
+    background: none;
+    font-size: 16px;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.tab-button.active {
+    border-bottom: 2px solid #007bff;
+    color: #007bff;
+    font-weight: bold;
+}
+
+.tab-content {
+    display: none;
+}
+
+.tab-content.active {
+    display: block;
+}
+
+.hoa-don-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+}
+
+.hoa-don-table th,
+.hoa-don-table td {
+    border: 1px solid #ddd;
+    padding: 10px;
+    text-align: left;
+}
+
+.hoa-don-table th {
+    background: #f4f4f4;
+    font-weight: bold;
+}
+
+.hoa-don-table tbody tr:nth-child(even) {
+    background: #f9f9f9;
+}
+
+.hoa-don-table tbody tr:hover {
+    background: #f0f0f0;
+}
+
+/*thông tin cá nhân*/
+.user-section {
+    padding: 20px;
+    border: 1px solid #ddd;
+    margin: 20px 0;
+}
+
+#user-info-section,
+#invoice-section {
+    display: none;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th,
+td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+}
+
+button {
+    padding: 10px;
+    background: #f90;
+    color: white;
+    border: none;
+    cursor: pointer;
+    margin: 5px;
+}
+
+.hot-rooms .alo {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+}
+
+.aly {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+}
