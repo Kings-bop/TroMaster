@@ -477,7 +477,7 @@ body {
 }
 
 .login-btn {
-    width: 90%;
+    width: 50%;
     padding: 10px;
     background-color: #ff5e00;
     border: none;
@@ -485,6 +485,8 @@ body {
     color: white;
     font-size: 16px;
     cursor: pointer;
+    display: block;
+    margin: 0 auto;
 }
 
 .login-btn:hover {
@@ -512,7 +514,7 @@ body {
 }
 
 .back-button1 {
-    width: 90%;
+    width: 50%;
     padding: 10px;
     background-color: #ff5e00;
     border: none;
@@ -520,6 +522,8 @@ body {
     color: white;
     font-size: 16px;
     cursor: pointer;
+    margin: 0 auto;
+    display: block;
 }
 
 .back-button1:hover {
