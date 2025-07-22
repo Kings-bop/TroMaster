@@ -608,7 +608,7 @@ function handleContractsData(result) {
 
     if (!result || !result.success || !Array.isArray(result.data) || result.data.length === 0) {
         tableBody.innerHTML = `<tr><td colspan="6" style="text-align:center;">Không có hợp đồng nào được tìm thấy</td></tr>`;
-        updatePagination("hop_dong-pagination", 0, 1, currentHopDongSearch);
+        updatePagination("hop_dong-pagination", result.totalPages, result.currentPage, loadContracts, currentHopDongSearch);
         return;
     }
 
