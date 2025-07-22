@@ -590,6 +590,11 @@ body {
     object-fit: cover;
 }
 
+.hot-room-card img:hover{
+     transition: transform 0.3s ease; 
+     transform: scale(1.1);
+}
+
 .hot-room-info {
     padding: 10px 15px;
     /* Tăng padding để nội dung không bị chật */
