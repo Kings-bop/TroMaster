@@ -105,7 +105,7 @@ function processArea($areaName, $status, $priceRange, $areaRange, $searchTerm) {
             
         }$html .= '</div>';
     } else {
-        $html .= '<p>Không có phòng nào theo tìm kiếm tại ' . htmlspecialchars($areaName) . '.</p>';
+        $html .= '<p>Không có phòng nào theo tìm kiếm tại ' . htmlspecialchars($areaName) . ' ' . 'vui lòng tải lại trang để cập nhật danh sách phòng trọ' . '.</p>';
     }
     return $html;
 }
