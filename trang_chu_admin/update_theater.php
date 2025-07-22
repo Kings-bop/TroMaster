@@ -9,7 +9,7 @@ $overview = $data['overview'];
 
 $sql = "UPDATE khu_tro SET dia_chi = ?, tong_quan = ?, ngay_cap_nhat = CURRENT_TIMESTAMP WHERE id_khu_tro = ?";
 $stmt = $conn->prepare($sql);
-$stmt-> $conn->prepare("ssi", $address, $overview, $id);
+$stmt->bindParam("ssi", $address, $overview, $id);
 
 if ($stmt->execute()) {
     echo json_encode(['success' => true]);
