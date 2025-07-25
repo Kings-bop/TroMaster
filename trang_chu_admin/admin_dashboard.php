@@ -570,6 +570,8 @@ if (!$user || !in_array($user['vai_tro'], ['admin', 'super_admin'])) {
             <input type="number" id="addHoaDonTienNuoc" placeholder="Tiền nước" min="0" value="0">
             <label for="addHoaDonTienInternet">Tiền internet (VNĐ):</label>
             <input type="number" id="addHoaDonTienInternet" placeholder="Tiền internet" min="0" value="0">
+            <label for="addHoaDonTienRac">Tiền rác (VNĐ):</label>
+            <input type="number" id="addHoaDonTienRac" placeholder="Tiền rác" min="0" value="0">
             <label for="addHoaDonPhiKhac">Phí khác (VNĐ):</label>
             <input type="number" id="addHoaDonPhiKhac" placeholder="Phí khác" min="0" value="0">
             <label for="addHoaDonTongTien">Tổng tiền (VNĐ):</label>

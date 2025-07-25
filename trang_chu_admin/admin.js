@@ -1108,6 +1108,7 @@ async function editPayment(id) {
             document.getElementById("editHoaDonTienDien").value = payment.tien_dien || 0;
             document.getElementById("editHoaDonTienNuoc").value = payment.tien_nuoc || 0;
             document.getElementById("editHoaDonTienInternet").value = payment.tien_internet || 0;
+            document.getElementById("editHoaDonTienRac").value = payment.tien_rac || 0;
             document.getElementById("editHoaDonPhiKhac").value = payment.phi_khac || 0;
             document.getElementById("editHoaDonTongTien").value = (payment.tong_tien || 0).toLocaleString() + " VNĐ";
             document.getElementById("editHoaDonDate").value = payment.ngay_thanh_toan || '';
@@ -1143,7 +1144,7 @@ async function editPayment(id) {
             }
 
             // Gắn sự kiện tính tổng tiền
-            const inputs = ["editHoaDonTienPhong", "editHoaDonTienDien", "editHoaDonTienNuoc", "editHoaDonTienInternet", "editHoaDonPhiKhac"];
+            const inputs = ["editHoaDonTienPhong", "editHoaDonTienDien", "editHoaDonTienNuoc", "editHoaDonTienInternet", "editHoaDonPhiKhac" , "editHoaDonTienRac"];
             inputs.forEach(id => {
                 const input = document.getElementById(id);
                 if (input) {
@@ -1168,7 +1169,8 @@ function calculateTotalAmountEdit() {
     const tienNuoc = parseFloat(document.getElementById("editHoaDonTienNuoc").value) || 0;
     const tienInternet = parseFloat(document.getElementById("editHoaDonTienInternet").value) || 0;
     const phiKhac = parseFloat(document.getElementById("editHoaDonPhiKhac").value) || 0;
-    const tongTien = tienPhong + tienDien + tienNuoc + tienInternet + phiKhac;
+    const tienRac = parseFloat(document.getElementById("editHoaDonTienRac").value) || 0;
+    const tongTien = tienPhong + tienDien + tienNuoc + tienInternet + phiKhac + tienRac;
     document.getElementById("editHoaDonTongTien").value = tongTien.toLocaleString() + " VNĐ";
 }
 
@@ -1203,7 +1205,8 @@ async function updatePayment() {
         phiKhac,
         ngayThanhToan,
         trangThai,
-        tongTien: tienPhong + tienDien + tienNuoc + tienInternet + phiKhac // Tính tổng tiền
+        tienRac,
+        tongTien: tienPhong + tienDien + tienNuoc + tienInternet + phiKhac + tienRac// Tính tổng tiền
     };
 
     try {
@@ -1255,7 +1258,8 @@ function calculateTotalAmount() {
     const tienNuoc = parseFloat(document.getElementById("addHoaDonTienNuoc").value) || 0;
     const tienInternet = parseFloat(document.getElementById("addHoaDonTienInternet").value) || 0;
     const phiKhac = parseFloat(document.getElementById("addHoaDonPhiKhac").value) || 0;
-    const tongTien = tienPhong + tienDien + tienNuoc + tienInternet + phiKhac;
+    const tienRac = parseFloat(document.getElementById("addHoaDonTienRac").value) || 0;
+    const tongTien = tienPhong + tienDien + tienNuoc + tienInternet + phiKhac + tienRac;
     document.getElementById("addHoaDonTongTien").value = tongTien;
 }
 

@@ -11,6 +11,7 @@ try {
     $tienPhong = $data['tienPhong'] ?? 0;
     $tienDien = $data['tienDien'] ?? 0;
     $tienNuoc = $data['tienNuoc'] ?? 0;
+    $tienRac = $data['tienRac'] ?? 0;
     $tienInternet = $data['tienInternet'] ?? 0;
     $phiKhac = $data['phiKhac'] ?? 0;
     $ngayThanhToan = $data['ngayThanhToan'] ?? null;
@@ -51,10 +52,10 @@ try {
 
     // Lưu hóa đơn
     $stmt = $conn->prepare("
-    INSERT INTO hoa_don (id_khach_thue, id_phong, thang_ap_dung, tien_phong, tien_dien, tien_nuoc, tien_internet, phi_khac, trang_thai_thanh_toan, ngay_thanh_toan)
-    VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+    INSERT INTO hoa_don (id_khach_thue, id_phong, thang_ap_dung, tien_phong, tien_dien, tien_nuoc, tien_internet, phi_khac, trang_thai_thanh_toan, ngay_thanh_toan, tien_rac)
+    VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
 ");
-$stmt->execute([$tenantId, $roomId, $thangApDung, $tienPhong, $tienDien, $tienNuoc, $tienInternet, $phiKhac, $trangThai, $ngayThanhToan]);
+$stmt->execute([$tenantId, $roomId, $thangApDung, $tienPhong, $tienDien, $tienNuoc, $tienInternet, $phiKhac, $trangThai, $ngayThanhToan, $tienRac]);
 
     echo json_encode(['success' => true, 'message' => 'Thêm hóa đơn thành công!']);
 } catch (Exception $e) {

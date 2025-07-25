@@ -439,6 +439,8 @@ function handleAddPaymentData(tenantsData, roomsData) {
         if (phiKhac) phiKhac.value = "0";
         const tongTien = document.getElementById("addHoaDonTongTien");
         if (tongTien) tongTien.value = "0";
+        const tienRac = document.getElementById("addHoaDonTienRac");
+        if (tienRac) phiKhac.value = "0";
 
         openModal("addHoaDonModal");
     } else {
