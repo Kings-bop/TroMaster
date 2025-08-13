@@ -1184,6 +1184,7 @@ async function updatePayment() {
     const tienDien = parseFloat(document.getElementById("editHoaDonTienDien").value) || 0;
     const tienNuoc = parseFloat(document.getElementById("editHoaDonTienNuoc").value) || 0;
     const tienInternet = parseFloat(document.getElementById("editHoaDonTienInternet").value) || 0;
+    const tienRac = parseFloat(document.getElementById("editHoaDonTienRac").value) || 0;
     const phiKhac = parseFloat(document.getElementById("editHoaDonPhiKhac").value) || 0;
     const ngayThanhToan = document.getElementById("editHoaDonDate").value || null;
     const trangThai = document.getElementById("editHoaDonStatus").value;
